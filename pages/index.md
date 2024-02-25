@@ -49,7 +49,7 @@ Product analytics for the Climb14er web app.
         AVG(risk_score) as avg_risk,
         COUNT(*) as value
     FROM plan
-    WHERE plan.created_at::DATE > (now()::DATE - 30)
+    WHERE start_at::DATE > (NOW()::TIMESTAMP WITHOUT TIME ZONE - INTERVAL '30 days')
     GROUP BY 1
 ```
 
